@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title>gifOS</title>
+		<link rel="stylesheet" href="styles/normalize.min.css" />
+		<link rel="stylesheet" type="text/css" href="styles/style.min.css" />
+		<link
+			href="https://fonts.googleapis.com/css?family=Chakra+Petch:400,700&display=swap"
+			rel="stylesheet"
+		/>
+	</head>
+	<body class="light">
+		<header>
+			<div class="bar light">
+				<p class="bar_text">
+					¡Bienvenidos/as a Guifos.com! ——————Donde los gifs están.////// Número
+					de visitas: 12.765.803
+				</p>
+			</div>
+			<div class="crear">
+				<img id="logo" class="logo--light" src="img/gifOF_logo.png" alt="" />
+				<input
+					onclick="sugerencias()"
+					type="button"
+					class="btn--light light"
+					value="Crear Guifos"
+				/>
+				<div>
+					<div class="btn--dropdown">
+						<input type="button" class="btn--light light" value="Elegir tema" />
+						<input
+							onclick="toggle()"
+							type="button"
+							class="btn--light light open"
+							value=""
+						/>
+					</div>
+					<div id="menuDesplegable" class="menu--desplegable">
+						<a
+							id="opcionLight"
+							onclick="lightTheme()"
+							class="menu--opcion opcion--light"
+							href="#"
+							>Sailor Day</a
+						>
+						<a
+							id="opcionDark"
+							onclick="darkTheme()"
+							class="menu--opcion opcion--dark"
+							href="#"
+							>Sailor Night</a
+						>
+					</div>
+				</div>
+				<a class="link--gifos light" href="#">Mis Guifos</a>
+			</div>
+		</header>
+		<section class="buscar light">
+			<h2 class="bar light">Buscar</h2>
+			<div class="cont">
+				<input
+					id="buscar_rec"
+					class="buscar_rec"
+					type="text"
+					name=""
+					placeholder="Busca gifs, hashtags, temas, busca lo que quieras..."
+					id="btn--buscar"
+				/>
+				<div class="btn--buscar light">
+					<span id="lupa" class="icon--buscar light"></span>
+					<a class="light" href="#" onclick="getSearchResults()">Buscar</a>
+				</div>
+			</div>
+		</section>
+		<section class="sugerencias">
+			<div class="rec">
+				<h2 class="rec_title">Hoy te sugerimos:</h2>
+			</div>
+			<div class="grid">
+				<div class="grid--gifs">
+					<div class="grid_cont">
+						<div class="bar light">
+							<h2 class="bar_title">#Jonathanvanness</h2>
+							<img src="img/close.svg" alt="" />
+						</div>
+						<div class="gif" id="gif">
+							<img id="1gif" src="" alt="" />
+						</div>
+						<input class="grid_btn light" type="button" value="Ver más" />
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="tendencias"></section>
+		<script src="script.js"></script>
+	</body>
+</html>

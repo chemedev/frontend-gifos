@@ -1,0 +1,21 @@
+input[button] {
+	font-family: 'Chakra Petch', sans-serif;
+	font-weight: 400;
+	font-size: 1em;
+	color: #110038;
+	letter-spacing: 0;
+	text-align: center;
+	line-height: 18px;
+	border: $btn--border;
+}
+
+a,
+a:visited {
+	text-decoration: none;
+	color: unset;
+}
+
+section {
+	width: 1200px;
+	margin: 0 auto;
+}
