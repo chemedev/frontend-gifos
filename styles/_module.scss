@@ -1,0 +1,234 @@
+.topBar {
+	box-shadow: $bar-bs;
+	background-image: var(--bar-bg);
+	margin: 1px 1px 0;
+}
+
+//! HEADER
+
+.topBar-text {
+	font-family: 'Chakra Petch', sans-serif;
+	font-size: 12px;
+	color: var(--fc);
+	letter-spacing: 0;
+}
+
+.logo {
+	grid-column-start: span 9;
+	width: 102.6px;
+	height: 64px;
+	cursor: pointer;
+}
+
+.boxDropdown {
+	position: relative;
+	display: flex;
+}
+
+.menu {
+	position: absolute;
+	width: 170px;
+	height: 102px;
+	left: -1%;
+	top: 100%;
+	background: var(--cont-buscar-bg);
+	box-shadow: $menu-bs;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	visibility: hidden;
+	opacity: 0;
+	transition: 0.5s;
+	z-index: 10;
+}
+
+.menu-option {
+	width: 150px;
+	height: 36px;
+	margin-top: 10px;
+	font-family: 'Chakra Petch', sans-serif;
+	font-weight: 400;
+	font-size: 16px;
+	color: $bg;
+	letter-spacing: 0;
+	line-height: 36px;
+	text-indent: 16px;
+	text-align: left;
+}
+
+.option {
+	background: $menu-day-bg;
+	border: var(--menu-opt-b);
+	box-shadow: var(--menu-opt-bs);
+	&::first-letter {
+		text-decoration: underline;
+	}
+}
+
+.option-dark {
+	background: $menu-night-bg;
+	border: var(--menu-opt-b);
+	box-shadow: var(--menu-opt-bs);
+}
+
+//! MAIN
+
+//! SECTION BUSCAR
+.section-buscar {
+	position: relative;
+	// height: 99px;
+	background: var(--cont-buscar-bg);
+	box-shadow: var(--cont-buscar-bs);
+	margin-bottom: 64px;
+	padding: 3px 3px 0;
+	&.dark {
+		background: var(--cont-buscar-bg);
+		box-shadow: var(--cont-buscar-bs);
+	}
+}
+
+h2.topBar {
+	font-family: 'Chakra Petch', sans-serif;
+	font-size: 0.875em;
+	color: var(--fc);
+	letter-spacing: 0;
+	padding-left: 3px;
+	box-shadow: none;
+}
+
+.container {
+	height: 75px;
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+}
+
+.txt-buscar {
+	font-family: 'Chakra Petch', sans-serif;
+	width: 1057px;
+	height: 48px;
+	background: var(--fc);
+	border: $input-buscar-b;
+	box-shadow: $input-buscar-bg;
+	padding-left: 1em;
+	caret-color: #4180f6;
+	&::placeholder {
+		color: #242424;
+	}
+}
+
+.container-sugerencia {
+	position: absolute;
+	padding: 16px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	left: 0px;
+	top: 100%;
+	width: 1200px;
+	height: 160px;
+	background: var(--cont-buscar-bg);
+	box-shadow: $menu-bs;
+	z-index: 10;
+	visibility: hidden;
+	opacity: 0;
+}
+
+.buscar-ejemplos {
+	height: 100px;
+	padding-top: 12px;
+	.grid-btn {
+		position: static;
+		width: 170px;
+		background: #4180f6;
+		border: 1px solid #4c2f99;
+		box-shadow: inset -2px -2px 0 0 #284f99, inset 2px 2px 0 0 #ffffff;
+		font-family: 'Chakra Petch', sans-serif;
+		font-weight: 400;
+		font-size: 14px;
+		color: #ffffff;
+		letter-spacing: 0;
+		line-height: 18px;
+	}
+}
+
+.container-resultados {
+	width: 1200px;
+	.grid-box {
+		padding: 0;
+	}
+	// .large {
+	// 	width: 592px;
+	// }
+}
+.gif {
+	width: 288px;
+	height: 313px;
+	// .large {
+	// 	width: 592px;
+	// }
+}
+
+.gifSugerencia {
+	width: 280px;
+	height: 280px;
+	// .large {
+	// 	width: 592px;
+	// }
+}
+
+//! SECTION SUGERENCIAS
+
+.section-sugerencias {
+}
+
+.titleBox {
+	width: 1200px;
+	height: 32px;
+	background: #fffafe;
+	border: $rec-buscar-b;
+	box-shadow: $rec-buscar-bs;
+	margin-bottom: 1rem;
+}
+
+.titleBox-header {
+	font-family: 'Chakra Petch', sans-serif;
+	font-weight: 400;
+	font-size: 0.875em;
+	padding-left: 0.5em;
+	color: var(--bg);
+	letter-spacing: 0;
+	line-height: 2rem;
+}
+
+.grid {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	gap: 1rem;
+}
+
+.grid-box {
+	position: relative;
+	width: 288px;
+	height: 313px;
+	padding: 3px 4px 4px;
+	background: var(--cont-buscar-bg);
+	box-shadow: $menu-bs;
+	.topBar {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		width: 280px;
+		height: 24px;
+		padding: 0 4px 0 3px;
+	}
+	.topBar-text {
+		font-weight: 700;
+		font-size: 14px;
+	}
+}
+
+//! SECTION TENDENCIAS
+
+.section-tendencias {
+}

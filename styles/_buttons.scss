@@ -1,0 +1,108 @@
+.btn {
+	cursor: pointer;
+	height: 36px;
+	width: 8.25em;
+	border: $btn-border;
+	background-color: var(--btn-bg);
+	box-shadow: var(--btn-bs);
+	color: var(--fc);
+	&:hover {
+		//! :ACTIVE ??
+		outline: var(--btn-line-hover);
+		outline-offset: -4px;
+		background-color: $btn-light-hover;
+	}
+}
+
+.btnTriangle {
+	width: 36px;
+	background-image: url(../img/dropdown.svg);
+	background-size: 10px 6px;
+	background-repeat: no-repeat;
+	background-position: center;
+	cursor: pointer;
+}
+
+.btnMisGifos {
+	// line-height: 18px;
+	width: 95px;
+	height: 32px;
+	line-height: 32px;
+	color: var(--fc);
+	&::first-letter {
+		text-decoration: underline;
+	}
+	&:hover {
+		outline: var(--btn-line-hover);
+	}
+	&:active {
+		color: var(--btn-buscar-fc);
+		outline: none;
+	}
+}
+
+.btn-buscar {
+	display: flex;
+	align-items: center;
+	width: 102px;
+	height: 36px;
+	cursor: pointer;
+	color: var(--btn-buscar-fc);
+	background-color: var(--cont-buscar-bg);
+	border: var(--menu-opt-b);
+	box-shadow: var(--menu-opt-bs);
+	#lupa {
+		display: inline-block;
+		height: 16px;
+		width: 16px;
+		margin: 10px;
+		background-image: url(../img/lupa_inactive.svg);
+		background-size: 16px 16px;
+		background-repeat: no-repeat;
+		background-position: center;
+	}
+	&:active {
+		outline: var(--btn-line-hover);
+		outline-offset: -4px;
+		background: $btn-light-hover;
+		box-shadow: var(--btn-bs);
+		color: var(--fc);
+		& #lupa {
+			background-image: url(../img/lupa.svg);
+		}
+	}
+	&:focus {
+		outline: 0;
+	}
+}
+
+.btn-sugerencia {
+	background-color: var(--btn-sugerencia-bg);
+	border: var(--menu-opt-b);
+	box-shadow: var(--menu-opt-bs);
+	width: 1057px;
+	height: 36px;
+	font-family: 'Chakra Petch', sans-serif;
+	font-weight: 400;
+	font-size: 16px;
+	color: var(--bg);
+	letter-spacing: 0;
+	line-height: 36px;
+	text-indent: 16px;
+	&:hover {
+		outline: var(--btn-line-hover);
+		outline-offset: -4px;
+	}
+}
+
+.grid-btn {
+	cursor: pointer;
+	position: absolute;
+	bottom: 15px;
+	left: 7px;
+	width: 81px;
+	height: 34px;
+	background: var(--btn-mas-bg);
+	border: $btn-mas-b;
+	box-shadow: var(--btn-mas-bs);
+}
