@@ -19,16 +19,20 @@
 			</div>
 			<nav>
 				<img id="logo" class="logo logo--light" src="img/gifOF_logo.png" alt="" />
-				<button class="btn" type="button">Crear Guifos</button>
+				<button class="btn btnblack" type="button" id="crearGifos">Crear Guifos</button>
 				<div class="boxDropdown">
-					<button class="btn" type="button">Elegir tema</button>
+					<button class="btn btnblack" type="button">Elegir tema</button>
 					<button class="btn btnTriangle" id="btnElegirTema" type="button"></button>
 					<div class="menu" id="menuDesplegable">
-						<button class="menu-option option-light" id="opcionLight">Sailor Day</button>
-						<button class="menu-option option-dark" id="opcionDark">Sailor Night</button>
+						<button class="menu-option option-light" id="opcionLight">
+							Sailor Day
+						</button>
+						<button class="menu-option option-dark" id="opcionDark">
+							Sailor Night
+						</button>
 					</div>
 				</div>
-				<a class="btnMisGifos" href="#">Mis Guifos</a>
+				<a class="btnMisGifos" href="#" id="misGifos">Mis Guifos</a>
 			</nav>
 		</header>
 		<main>
@@ -36,7 +40,12 @@
 				<div class="section-buscar">
 					<h2 class="topBar">Buscar</h2>
 					<div class="container">
-						<input class="txt-buscar" id="buscar_rec" type="search" placeholder="Busca gifs, hashtags, temas, busca lo que quieras..." />
+						<input
+							class="txt-buscar"
+							id="buscar_rec"
+							type="search"
+							placeholder="Busca gifs, hashtags, temas, busca lo que quieras..."
+						/>
 						<div class="btn-buscar" id="busqueda">
 							<span id="lupa" class="icon-buscar"></span>
 							<span>Buscar</span>
@@ -50,8 +59,7 @@
 					</div>
 					<div class="container-sugerencia" id="popupDesplegable">
 						<a class="btn-sugerencia">Resultado de búsqueda sugerido</a>
-						<a class="btn-sugerencia">Un resultado similar de búsqueda</a>
-						<a class="btn-sugerencia">Y otro más</a>
+						<a class="btn-sugerencia">Un resultado similar de búsqueda</a> <a class="btn-sugerencia">Y otro más</a>
 					</div>
 				</div>
 				<div class="container-resultados">
