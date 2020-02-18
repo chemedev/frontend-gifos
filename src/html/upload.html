@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title>Subí tu Gifo</title>
+		<link rel="shortcut icon" href="/img/gifOF_logo.png" type="image/x-icon" />
+		<link rel="stylesheet" href="/src/css/normalize.min.css" />
+		<link rel="stylesheet" type="text/css" href="/src/css//style.min.css" />
+		<link href="https://fonts.googleapis.com/css?family=Chakra+Petch:400,700&display=swap" rel="stylesheet" />
+		<script src="https://cdn.jsdelivr.net/npm/luxon@1.22.0/build/global/luxon.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/RecordRTC/5.5.8/RecordRTC.min.js"></script>
+	</head>
+	<body>
+		<header>
+			<div class="topBar">
+				<p class="topBar-text">
+					¡Bienvenidos/as a Guifos.com! ——————Donde los gifs están.////// Número de visitas: 12.765.803
+				</p>
+			</div>
+			<nav class="misgifos">
+				<img id="arrow" class="arrow" src="../../img/arrow.svg" alt="" />
+				<img id="logo" class="logo" src="../../img/gifOF_logo.png" alt="" />
+			</nav>
+		</header>
+		<main>
+			<section class="crearGifos">
+				<div class="section-upload">
+					<h2 id="title" class="topBar">Un Chequeo Antes de Empezar</h2>
+					<img class="btnCloseUpload" src="../../img/close.svg" alt="" />
+					<div class="container-upload">
+						<div class="container-video">
+							<video autoplay></video>
+							<img id="gif" />
+						</div>
+						<div class="container-uploading">
+							<img src="../../img/globe.png" alt="" />
+							<p class="subiendo">Estamos subiendo tu gifo...</p>
+							<progress class="progressPlay" id="progressFile" max="100" value="0"><span>asd</span></progress>
+							<p class="tiempo">Tiempo restante: <span>38 años</span> algunos minutos</p>
+						</div>
+						<div class="containerButtons btnCapturar">
+							<label id="timer" class="timer"></label>
+							<button class="btn btnPlay" id="btnPlay" type="button"></button>
+							<progress class="progressFile" id="progressPlay" max="100" value="0"><span></span></progress>
+							<div>
+								<button class="btn btnRepeat" id="btnRepeat" type="button">Repetir Captura</button>
+								<button class="btn btnCamera" id="btnCamera" type="button"></button>
+								<button class="btn" type="button" id="btnRecord">Capturar</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+		</main>
+		<script src="/src/js/main.js"></script>
+		<script src="/src/js/upload.js"></script>
+	</body>
+</html>

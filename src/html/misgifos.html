@@ -4,12 +4,13 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
-		<title>gifOS</title>
-		<link rel="stylesheet" href="styles/normalize.min.css" />
-		<link rel="stylesheet" type="text/css" href="styles/style.min.css" />
-		<link rel="stylesheet" type="text/css" href="styles/style.min.css" />
+		<title>Mis GifOS</title>
+		<link rel="shortcut icon" href="/img/gifOF_logo.png" type="image/x-icon" />
+		<link rel="stylesheet" href="/src/css/normalize.min.css" />
+		<link rel="stylesheet" type="text/css" href="/src/css/style.min.css" />
 		<link href="https://fonts.googleapis.com/css?family=Chakra+Petch:400,700&display=swap" rel="stylesheet" />
-		<script src="misgifos.js" defer></script>
+		<script src="/src/js/main.js" defer></script>
+		<script src="/src/js/misgifos.js" defer></script>
 	</head>
 	<body>
 		<header>
@@ -18,26 +19,13 @@
 					¡Bienvenidos/as a Guifos.com! ——————Donde los gifs están.////// Número de visitas: 12.765.803
 				</p>
 			</div>
-			<nav>
-				<img id="logo" class="logo logo--light" src="img/gifOF_logo.png" alt="" />
-				<button class="btn" type="button">Crear Guifos</button>
-				<div class="boxDropdown">
-					<button class="btn" type="button">Elegir tema</button>
-					<button class="btn btnTriangle" id="btnElegirTema" type="button"></button>
-					<div class="menu" id="menuDesplegable">
-						<button class="menu-option option-light" id="opcionLight">
-							Sailor Day
-						</button>
-						<button class="menu-option option-dark" id="opcionDark">
-							Sailor Night
-						</button>
-					</div>
-				</div>
-				<a class="btnMisGifos" href="#">Mis Guifos</a>
+			<nav class="misgifos">
+				<img id="arrow" class="arrow" src="/img/arrow.svg" alt="" />
+				<img id="logo" class="logo" src="/img/gifOF_logo.png" alt="" />
 			</nav>
 		</header>
 		<main>
-			<section>
+			<section class="crearGifos">
 				<div class="section-crear">
 					<h2 class="topBar">Crear Gifos</h2>
 					<div class="container-crearGifos">
@@ -46,8 +34,7 @@
 						</h2>
 						<div class="container-parrafo">
 							<p class="p-crearGifos">
-								Crear tu guifo es muy fácil, graba cualquier imagen con tu cámara y obtén guifos personalizados. Los
-								pasos para crear tu guifo son:
+								Crear tu guifo es muy fácil, graba cualquier imagen con tu cámara y obtén guifos personalizados. Los pasos para crear tu guifo son:
 							</p>
 							<br />
 							<ul class="ul-crearGifos">
@@ -68,9 +55,29 @@
 						</div>
 					</div>
 				</div>
-				<div class="container-resultados">
+			</section>
+			<section class="gifoSubido">
+				<div class="section-upload uploaded">
+					<h2 class="topBar">Gifo Subido Con Éxito</h2>
+					<div class="containerGifoUploaded">
+						<div class="container-izq">
+							<video></video>
+						</div>
+						<div class="container-der">
+							<p class="p-crearGifos">
+								Gifo creado con éxito
+							</p>
+							<button>Copiar Enlace Gifo</button>
+							<button>Descargar Gifo</button>
+							<button class="btn" type="button" id="btnComenzar">Listo</button>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section class="misgifos" id="misgifos">
+				<div class="container-resultados" id="container-resultados">
 					<div class="titleBox">
-						<h2 class="titleBox-header">Ejemplo de búsqueda (resultados)</h2>
+						<h2 class="titleBox-header">Mis gifos:</h2>
 					</div>
 					<div class="grid" id="myGrid">
 						<!-- <div class="grid-box">
