@@ -14,6 +14,8 @@ $menu-bs: inset -2px -2px 0 0 #b4b4b4, inset 2px 2px 0 0 #ffffff;
 $rec-buscar-bs: inset -2px -2px 0 0 #e6dce4, inset 2px 2px 0 0 #80687d;
 $input-buscar-bg: inset -2px -2px 0 0 #e6e6e6, inset 2px 2px 0 0 #000000;
 
+
+//! LIGHT THEME
 html {
 	--body_Background: #fff4fd;
 
@@ -104,6 +106,7 @@ html {
 	--boxGifTendencias_Border_Hover: 1px dotted #110038;
 }
 
+//! DARK THEME
 html[data-theme='dark'] {
 	--body_Background: #110038;
 

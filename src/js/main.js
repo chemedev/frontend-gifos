@@ -1,6 +1,5 @@
-'use strict'
-
 const apiKey = 'tE63cJMHJADHunmLcQ6AoRy8BkwkOAuu';
+const apiGet = 'https://api.giphy.com/v1/gifs';
 
 function lightTheme() {
 	document.documentElement.setAttribute('data-theme', 'light');

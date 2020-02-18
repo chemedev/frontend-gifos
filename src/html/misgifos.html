@@ -8,7 +8,7 @@
 		<link rel="shortcut icon" href="/img/gifOF_logo.png" type="image/x-icon" />
 		<link rel="stylesheet" href="/src/css/normalize.min.css" />
 		<link rel="stylesheet" type="text/css" href="/src/css/style.min.css" />
-		<link href="https://fonts.googleapis.com/css?family=Chakra+Petch:400,700&display=swap" rel="stylesheet" />
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Chakra+Petch:400,700&amp;display=swap" />
 		<script src="/src/js/main.js" defer></script>
 		<script src="/src/js/misgifos.js" defer></script>
 	</head>
@@ -61,15 +61,15 @@
 					<h2 class="topBar">Gifo Subido Con Éxito</h2>
 					<div class="containerGifoUploaded">
 						<div class="container-izq">
-							<video></video>
+							<iframe></iframe>
 						</div>
 						<div class="container-der">
 							<p class="p-crearGifos">
 								Gifo creado con éxito
 							</p>
-							<button>Copiar Enlace Gifo</button>
-							<button>Descargar Gifo</button>
-							<button class="btn" type="button" id="btnComenzar">Listo</button>
+							<button id="btnCopyLink" class="btnUploaded">Copiar Enlace Gifo</button>
+							<a id="btnDownloadGifo" target="_blank" class="btnUploaded">Descargar Gifo</a>
+							<button class="btn btnListo" type="button" id="btnReady">Listo</button>
 						</div>
 					</div>
 				</div>

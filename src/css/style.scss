@@ -36,7 +36,6 @@ a,
 a:visited {
 	font-family: 'Chakra Petch', sans-serif;
 	text-decoration: none;
-	color: unset;
 	box-sizing: border-box;
 }
 
@@ -51,7 +50,6 @@ button {
 	font-family: 'Chakra Petch', sans-serif;
 	font-weight: 400;
 	font-size: 1em;
-	// color: #110038;
 	letter-spacing: 0;
 	text-align: center;
 	line-height: 18px;
@@ -153,10 +151,8 @@ h2 {
 
 .section-buscar {
 	position: relative;
-	// height: 99px;
 	background: var(--boxDeBusqueda_Background);
 	box-shadow: var(--boxDeBusqueda_BoxShadow);
-	// margin-bottom: 64px;
 	padding: 3px 3px 0;
 }
 
@@ -203,7 +199,6 @@ h2.topBar {
 	background: var(--popupDeBusqueda_Background);
 	box-shadow: var(--popupDeBusqueda_BoxShadow);
 	z-index: 10;
-	// visibility: hidden;
 	pointer-events: none;
 	opacity: 0;
 }
@@ -295,8 +290,7 @@ h2.topBar {
 	width: 288px;
 	height: 313px;
 	padding: 3px 4px 4px;
-	background: var(--boxDeGifs_Background);
-	box-shadow: var(--boxDeGifs_BoxShadow);
+
 	.topBar {
 		display: flex;
 		align-items: center;
@@ -309,22 +303,21 @@ h2.topBar {
 		font-weight: 700;
 		font-size: 14px;
 	}
+	&:hover {
+		background: var(--boxDeGifs_Background);
+		box-shadow: var(--boxDeGifs_BoxShadow);
+	}
 }
 
 //! SECTION TENDENCIAS
 
 //! SECTION CREAR
 
-// .crearGifos {
-// 	display: none;
-// }
-
 .section-crear {
 	width: 684px;
 	height: 386px;
 	margin: 0 auto;
 	position: relative;
-	// height: 99px;
 	background: var(--boxDeBusqueda_Background);
 	box-shadow: var(--boxDeBusqueda_BoxShadow);
 	margin-top: 75px;
@@ -352,8 +345,12 @@ h2.topBar {
 }
 
 .p-crearGifos {
-	font-size: 14px;
-	line-height: 20px;
+	font-family: 'Chakra Petch', sans-serif;
+	font-size: 16px;
+	color: #110038;
+	letter-spacing: 0;
+	line-height: 22px;
+	font-weight: 700;
 	&:last-child {
 		line-height: 30px;
 	}
@@ -407,7 +404,6 @@ h2.topBar {
 	box-shadow: var(--btn_CrearGifos_ElegirTema_BoxShadow);
 	color: var(--btn_CrearGifos_ElegirTema_Text);
 	&:hover {
-		//! :ACTIVE ??
 		outline: var(--btn-line-hover);
 		outline-offset: -4px;
 		background-color: $btn-light-hover;
@@ -436,7 +432,6 @@ h2.topBar {
 }
 
 .btnMisGifos {
-	// line-height: 18px;
 	width: 95px;
 	height: 32px;
 	line-height: 32px;
@@ -560,13 +555,17 @@ h2.topBar {
 	padding: 0;
 	width: 832px;
 	height: 434px;
-	background: #ffffff;
-	border: 1px solid #979797;
-	box-shadow: inset -2px -2px 0 0 #e6e6e6, inset 2px 2px 0 0 #000000;
+	background: --cuadroTextBusqueda_Background;
+	border: --cuadroTextBusqueda_Border;
+	box-shadow: --cuadroTextBusqueda_BoxShadow;
 	margin: 8px 14px 0 8px;
 	display: flex;
 	align-items: center;
 	justify-content: center;
+}
+
+.gifoSubido {
+	display: none;
 }
 
 video {
@@ -578,7 +577,6 @@ video {
 	position: relative;
 	display: flex;
 	align-items: center;
-	// justify-content: space-between;
 	div {
 		display: flex;
 	}
@@ -601,11 +599,17 @@ video {
 
 .btnReady {
 	background-color: #ff6161;
+	&:hover {
+		background-color: #ff6161;
+	}
 }
 
 .btnRecord {
 	background-color: #ff6161;
 	background-image: url(/img/recording_dark.svg);
+	&:hover {
+		background-color: #ff6161;
+	}
 }
 
 .timer {
@@ -628,9 +632,9 @@ video {
 
 .btnRepeat {
 	margin-right: 14px;
-	background: #fff4fd;
-	border: 1px solid #110038;
-	box-shadow: inset -1px -1px 0 0 #997d97, inset 1px 1px 0 0 #ffffff;
+	background-color: --body_Background;
+	border: btnSailorDay_Text;
+	box-shadow: --btnBuscar_BoxShadow_FocusActive;
 	visibility: hidden;
 }
 
@@ -673,9 +677,9 @@ progress {
 	width: 838px;
 	height: 440px;
 	margin: 8px 0 0 8px;
-	background: #ffffff;
-	border: 1px solid #979797;
-	box-shadow: inset -2px -2px 0 0 #e6e6e6, inset 2px 2px 0 0 #000000;
+	background: --cuadroTextBusqueda_Background;
+	border: --cuadroTextBusqueda_Border;
+	box-shadow: --cuadroTextBusqueda_BoxShadow;
 	img {
 		width: 48px;
 		height: 48px;
@@ -717,14 +721,13 @@ progress {
 }
 
 .container-izq {
-	background-color: red;
 	margin: 27px 0 0 21px;
 	width: 365px;
 	height: 191px;
 }
 
 .container-der {
-	margin: 27px 0 0 24px;
+	margin: 49px 0 0 24px;
 	display: flex;
 	flex-flow: column wrap;
 }
@@ -732,4 +735,25 @@ progress {
 .uploaded {
 	width: 721px;
 	height: 391px;
+}
+
+.btnUploaded {
+	cursor: pointer;
+	width: 256px;
+	height: 36px;
+	background: #fff4fd;
+	border: 1px solid #110038;
+	box-shadow: --btn_CrearGifos_ElegirTema_BoxShadow;
+	margin-top: 16px;
+	text-align: center;
+	line-height: 36px;
+}
+
+.btnListo {
+	margin-top: 111px;
+	margin-left: 124px;
+}
+
+iframe {
+	height: 100%;
 }

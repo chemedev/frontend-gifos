@@ -21,8 +21,12 @@ let cameraStream,
 document.getElementById('arrow').addEventListener('click', () => (document.location.href = '/src/html/'));
 document.getElementById('logo').addEventListener('click', () => (document.location.href = '/src/html/'));
 btnRecord.addEventListener('click', () => dynamicFunctionality());
-// btnRepeat.addEventListener('click', () => {});
+btnRepeat.addEventListener('click', () => {
+	location.reload();
+	recordVideo();
+});
 
+//! Funcionalidad secuencial del btn 'Grabar'.
 function dynamicFunctionality() {
 	switch (flag) {
 		case 'record':
@@ -64,6 +68,19 @@ function dynamicFunctionality() {
 			btnPlay.classList.toggle('visible');
 			lblTimer.classList.toggle('visible');
 			break;
+	}
+}
+
+function persistenceTheme() {
+	if (localStorage.theme != undefined) {
+		document.documentElement.dataset.theme = localStorage.getItem('theme');
+		if (localStorage.getItem('theme') == 'light') {
+			const logo = document.getElementById('logo');
+			logo.setAttribute('src', '../../img/gifOF_logo.png');
+		} else {
+			const logo = document.getElementById('logo');
+			logo.setAttribute('src', '../../img/gifOF_logo_dark.png');
+		}
 	}
 }
 
@@ -128,16 +145,20 @@ async function upload(blob) {
 		.then(res => res.json())
 		.then(resParsed => {
 			const uploadedGifoId = resParsed.data.id;
+			localStorage.setItem('lastUpload', uploadedGifoId);
 			saveGifoInLocalStorage(uploadedGifoId);
 		});
+	localStorage.setItem('newGifos', false);
 	localStorage.setItem('hasUploaded', true);
 	document.location.href = '/src/html/misgifos.html';
 }
 
+//! Guarda IDs separados por , en un solo key
 function saveGifoInLocalStorage(gifoID) {
 	let savedGifs = localStorage.getItem('myGifos');
 	if (savedGifs != null) localStorage.setItem('myGifos', `${savedGifs},${gifoID}`);
 	else localStorage.setItem('myGifos', gifoID);
 }
 
+persistenceTheme();
 startCamera();

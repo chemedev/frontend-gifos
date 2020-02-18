@@ -18,9 +18,11 @@ document.getElementById('logo').addEventListener('click', () => (document.locati
 document.getElementById('crearGifos').addEventListener('click', () => {
 	localStorage.setItem('newGifos', true);
 	document.location.href = '/src/html/misgifos.html';
+	localStorage.setItem('hasUploaded', false);
 });
 document.getElementById('misGifos').addEventListener('click', () => {
 	localStorage.setItem('newGifos', false);
+	localStorage.setItem('hasUploaded', false);
 	document.location.href = '/src/html/misgifos.html';
 });
 
@@ -84,6 +86,7 @@ function tendencias() {
 	return found;
 }
 
+//! Carga palabras tipeadas en btns bajo cuadro de búsqueda
 function inputBuscarOnKeyUp() {
 	let valueBuscar = document.getElementById('buscar_rec').value;
 	let anySpace = valueBuscar.includes(' ', spaceIndex);
@@ -159,6 +162,7 @@ function busqueda(search) {
 	return found;
 }
 
+//! Cierra gif de sugs con close.svg.
 function removeGif(gif) {
 	document.getElementById(gif).remove();
 }
@@ -207,6 +211,7 @@ function inputBuscarOnBlur() {
 	cont = 0;
 }
 
+//! Limpia la última búsqueda
 function clearGifs() {
 	const grid = document.getElementById('myGrid');
 	let child = grid.lastElementChild;
@@ -216,6 +221,7 @@ function clearGifs() {
 	}
 }
 
+//! Comprobamos el tema elegido en LclStrg y load de sugs/trends
 persistenceTheme();
 sugerencias();
 tendencias();
