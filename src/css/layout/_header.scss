@@ -1,0 +1,76 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the header of the site/application.
+// -----------------------------------------------------------------------------
+
+#menuDesplegable.active,
+#popupDesplegable.active {
+	visibility: visible;
+	pointer-events: auto;
+	opacity: 1;
+	transition: 0.5s;
+}
+
+.topBar {
+	box-shadow: $bar-bs;
+	background-image: var(--topBarPrincipal_Background);
+	margin: 1px 1px 0;
+}
+
+.topBar-text {
+	font-family: 'Chakra Petch', sans-serif;
+	font-size: 12px;
+	color: var(--topBarPrincipal_Text);
+	letter-spacing: 0;
+}
+
+.logo {
+	grid-column-start: span 9;
+	width: 102.6px;
+	height: 64px;
+	cursor: pointer;
+}
+
+.boxDropdown {
+	position: relative;
+	display: flex;
+}
+
+.menu {
+	position: absolute;
+	width: 170px;
+	height: 102px;
+	left: -1%;
+	top: 100%;
+	background: var(--boxTemas_Background);
+	box-shadow: var(--boxTemas_BoxShadow);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	visibility: hidden;
+	opacity: 0;
+	transition: 0.5s;
+	z-index: 10;
+}
+
+.menu-option {
+	cursor: pointer;
+	width: 150px;
+	height: 36px;
+	margin-top: 10px;
+	font-family: 'Chakra Petch', sans-serif;
+	font-weight: 400;
+	font-size: 16px;
+	background: var(--btnSailorDay_Background);
+	color: var(--btnSailorDay_Text);
+	letter-spacing: 0;
+	line-height: 36px;
+	text-indent: 16px;
+	text-align: left;
+}
+
+.option-dark {
+	background: var(--btnSailorNight_Background);
+	border: var(--btnSailorNight_Border);
+	box-shadow: var(--btnSailorNight_BoxShadow);
+}
+

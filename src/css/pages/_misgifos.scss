@@ -1,0 +1,160 @@
+// -----------------------------------------------------------------------------
+// This file contains styles that are specific to the misgifos page.
+// -----------------------------------------------------------------------------
+
+.section-crear {
+	width: 684px;
+	height: 386px;
+	margin: 0 auto;
+	position: relative;
+	background: var(--boxDeBusqueda_Background);
+	box-shadow: var(--boxDeBusqueda_BoxShadow);
+	margin-top: 75px;
+	margin-bottom: 64px;
+	padding: 3px 3px 0;
+	h2.topBar {
+		height: 24px;
+		line-height: 24px;
+	}
+}
+
+.header-crearGifos {
+	padding: 0;
+	font-weight: 700;
+	position: relative;
+	padding-top: 30px;
+	padding-bottom: 17px;
+}
+
+.header-crearGifos::before {
+	content: url(/img/window.png);
+	position: absolute;
+	left: -48px;
+	top: 40px;
+}
+
+.p-crearGifos {
+	font-family: 'Chakra Petch', sans-serif;
+	font-size: 16px;
+	color: #110038;
+	letter-spacing: 0;
+	line-height: 22px;
+	font-weight: 700;
+	&:last-child {
+		line-height: 30px;
+	}
+}
+
+.ul-crearGifos {
+	margin: 0;
+	font-size: 14px;
+	counter-reset: counter;
+	list-style-type: none;
+	padding: 0;
+}
+
+.ul-crearGifos li {
+	counter-increment: counter;
+	line-height: 30px;
+}
+
+.ul-crearGifos li::before {
+	content: counter(counter) ') ';
+	font-weight: 700;
+}
+
+.container-crearGifos {
+	flex-direction: column;
+	align-items: flex-start;
+	justify-content: start;
+	padding-left: 73px;
+	height: 356px;
+	background: #e6e6e6;
+}
+
+.container-parrafo {
+	width: 518px;
+	height: 190px;
+}
+
+.containerButtons {
+	width: 100%;
+	padding-top: 28px;
+	text-align: right;
+	padding-right: 36px;
+}
+
+.cancelar {
+	background-color: #ffffff;
+}
+
+.progressPlay {
+	visibility: hidden;
+}
+
+.container-uploading {
+	display: none;
+	flex-direction: column;
+	align-items: center;
+	width: 838px;
+	height: 440px;
+	margin: 8px 0 0 8px;
+	background: --cuadroTextBusqueda_Background;
+	border: --cuadroTextBusqueda_Border;
+	box-shadow: --cuadroTextBusqueda_BoxShadow;
+	img {
+		width: 48px;
+		height: 48px;
+		margin-top: 139px;
+	}
+	p.subiendo {
+		margin-top: 8px;
+		font-family: 'Chakra Petch', sans-serif;
+		font-weight: 700;
+		font-size: 16px;
+		color: #110038;
+		letter-spacing: 0;
+		text-align: center;
+		line-height: 22px;
+	}
+
+	p.tiempo {
+		font-family: 'Chakra Petch', sans-serif;
+		margin-top: 8px;
+		font-size: 12px;
+		color: rgba(17, 0, 56, 0.64);
+		letter-spacing: 0;
+		text-align: center;
+		line-height: 14px;
+		span {
+			text-decoration: line-through;
+		}
+	}
+	progress {
+		width: 324px;
+		margin: 39px 0 0 0;
+		background: #b4b4b4;
+	}
+}
+
+.containerGifoUploaded {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.container-izq {
+	margin: 27px 0 0 21px;
+	width: 365px;
+	height: 191px;
+}
+
+.container-der {
+	margin: 49px 0 0 24px;
+	display: flex;
+	flex-flow: column wrap;
+}
+
+.uploaded {
+	width: 721px;
+	height: 391px;
+}

@@ -1,0 +1,152 @@
+// -----------------------------------------------------------------------------
+// This file contains styles that are specific to the home page.
+// -----------------------------------------------------------------------------
+
+.section-buscar {
+	position: relative;
+	background: var(--boxDeBusqueda_Background);
+	box-shadow: var(--boxDeBusqueda_BoxShadow);
+	padding: 3px 3px 0;
+}
+
+
+
+.container {
+	height: 75px;
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+}
+
+.txt-buscar {
+	font-family: 'Chakra Petch', sans-serif;
+	width: 1057px;
+	height: 48px;
+	background: var(--cuadroTextBusqueda_Background);
+	border: var(--cuadroTextBusqueda_Border);
+	box-shadow: var(--cuadroTextBusqueda_BoxShadow);
+	padding-left: 1em;
+	caret-color: #4180f6;
+	&::placeholder {
+		color: #242424;
+	}
+}
+
+.container-sugerencia {
+	position: absolute;
+	padding: 16px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	left: 0px;
+	top: 100%;
+	width: 1200px;
+	height: 160px;
+	background: var(--popupDeBusqueda_Background);
+	box-shadow: var(--popupDeBusqueda_BoxShadow);
+	z-index: 10;
+	pointer-events: none;
+	opacity: 0;
+}
+
+.buscar-ejemplos {
+	display: none;
+	padding-top: 12px;
+	.grid-btn {
+		position: static;
+		width: 170px;
+		background: var(--btnHashtag_Background);
+		border: var(--btnHashtag_Border);
+		box-shadow: var(--btnHashtag_BoxShadow);
+		font-family: 'Chakra Petch', sans-serif;
+		font-weight: 400;
+		font-size: 14px;
+		color: var(--btnHashtag_Text);
+		letter-spacing: 0;
+		line-height: 18px;
+	}
+}
+
+.container-resultados {
+	width: 1200px;
+	.grid-box {
+		padding: 0;
+	}
+}
+
+.gif {
+	width: 100%;
+	height: 100%;
+	&:hover {
+		outline-offset: -4px;
+		outline: var(--boxGifTendencias_Border_Hover);
+		outline-width: 0.15em;
+	}
+}
+
+.gifSugerencia {
+	width: 280px;
+	height: 280px;
+	&:hover {
+		outline-offset: -4px;
+		outline: var(--boxGifTendencias_Border_Hover);
+		outline-width: 0.15em;
+	}
+}
+
+#resultados {
+	display: none;
+}
+
+#sugerencias {
+	display: none;
+}
+
+.titleBox {
+	width: 1200px;
+	height: 32px;
+	background: var(--tituloSugerenciasTendenciasResultado_Background);
+	border: var(--tituloSugerenciasTendenciasResultado_Border);
+	box-shadow: var(--tituloSugerenciasTendenciasResultado_BoxShadow);
+	margin-bottom: 1rem;
+}
+
+.titleBox-header {
+	font-family: 'Chakra Petch', sans-serif;
+	font-weight: 400;
+	font-size: 0.875em;
+	padding-left: 0.5em;
+	color: var(--tituloSugerenciasTendenciasResultado_Text);
+	letter-spacing: 0;
+	line-height: 2rem;
+}
+
+.grid {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	gap: 1rem;
+}
+
+.grid-box {
+	position: relative;
+	width: 288px;
+	height: 313px;
+	padding: 3px 4px 4px;
+
+	.topBar {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		width: 280px;
+		height: 24px;
+		padding: 0 4px 0 3px;
+	}
+	.topBar-text {
+		font-weight: 700;
+		font-size: 14px;
+	}
+	&:hover {
+		background: var(--boxDeGifs_Background);
+		box-shadow: var(--boxDeGifs_BoxShadow);
+	}
+}

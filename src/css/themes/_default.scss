@@ -1,0 +1,90 @@
+//! LIGHT THEME
+html {
+	--body_Background: #fff4fd;
+
+	--topBarPrincipal_Background: linear-gradient(270deg, #f7c9f3 0%, #4180f6 100%);
+	--topBarPrincipal_Text: #ffffff;
+
+	--btn_CrearGifos_ElegirTema_Background: #f7c9f3;
+	--btn_CrearGifos_ElegirTema_Background_HoverActive: #e6bbe2;
+	--btn_CrearGifos_ElegirTema_Border: 1px solid #110038;
+	--btn_CrearGifos_ElegirTema_Border_HoverActive: 1px dotted #110038;
+	--btn_CrearGifos_ElegirTema_BoxShadow: inset -1px -1px 0 0 #997d97, inset 1px 1px 0 0 #ffffff;
+	--btn_CrearGifos_ElegirTema_Text: #110038;
+
+	--boxTemas_Background: #e6e6e6;
+	--boxTemas_BoxShadow: inset -2px -2px 0 0 #b4b4b4, inset 2px 2px 0 0 #ffffff;
+
+	--btnSailorDay_Background: #fff4fd;
+	--btnSailorDay_Border: 1px solid #cca6c9;
+	--btnSailorDay_BoxShadow: inset -1px -1px 0 0 #e6dce4, inset 1px 1px 0 0 #ffffff;
+	--btnSailorDay_Text: #110038;
+
+	--btnSailorNight_Background: #f0f0f0;
+	--btnSailorNight_Border: 1px solid #808080;
+	--btnSailorNight_BoxShadow: inset -1px -1px 0 0 #b4b4b4, inset 1px 1px 0 0 #ffffff;
+	--btnSailorNight_Text: #110038;				//! SIN USO
+
+	--btnMisGifos_Text: #110038;
+	--btnMisGifos_Border_Hover: 1px dotted #110038;
+
+	--boxDeBusqueda_Background: #e6e6e6;
+	--boxDeBusqueda_BoxShadow: inset -2px -2px 0 0 #b4b4b4, inset 2px 2px 0 0 #ffffff;
+
+	--topBarBuscar_Background: linear-gradient(270deg, #f7c9f3 0%, #4180f6 100%);
+	--topBarBuscar_Text: #ffffff;
+
+	--cuadroTextBusqueda_Background: #ffffff;
+	--cuadroTextBusqueda_Border: 1px solid #979797;
+	--cuadroTextBusqueda_BoxShadow: inset -2px -2px 0 0 #e6e6e6, inset 2px 2px 0 0 #000000;
+	--cuadroTextBusqueda_Text: #b4b4b4;
+	--cuadroTextBusqueda_Text_Focus: #110038;
+
+	--btnBuscar_Background: #e6e6e6;
+	--btnBuscar_Background_Focus: #f7c9f3;
+	--btnBuscar_Background_Active: #e6bbe2;
+	--btnBuscar_Border: 1px solid #808080;
+	--btnBuscar_Border_Focus: 1px solid #110038;
+	--btnBuscar_Border_Active: 1px dotted #110038;
+	--btnBuscar_BoxShadow: inset -1px -1px 0 0 #b4b4b4, inset 1px 1px 0 0 #ffffff;
+	--btnBuscar_BoxShadow_FocusActive: inset -1px -1px 0 0 #997d97, inset 1px 1px 0 0 #ffffff;
+	--btnBuscar_Text: #b4b4b4;
+	--btnBuscar_Text_FocusActive: #110038;
+
+	--popupDeBusqueda_Background: #e6e6e6;
+	--popupDeBusqueda_BoxShadow: inset -2px -2px 0 0 #b4b4b4, inset 2px 2px 0 0 #ffffff;
+
+	--btnSugerido_Background: #f0f0f0;
+	--btnSugerido_Background_Active: #dbdbdb;
+	--btnSugerido_Border: 1px solid #808080;
+	--btnSugerido_Border_Focus: 1px dotted #110038;
+	--btnSugerido_BoxShadow: inset -1px -1px 0 0 #b4b4b4, inset 1px 1px 0 0 #ffffff;
+	--btnSugerido_Text: #110038;
+
+	--btnHashtag_Background: #4180f6;
+	--btnHashtag_Border: 1px solid #4c2f99;
+	--btnHashtag_Border_Hover: 1px dotted #4c2f99;
+	--btnHashtag_BoxShadow: inset -2px -2px 0 0 #284f99, inset 2px 2px 0 0 #ffffff;
+	--btnHashtag_Text: #ffffff;
+
+	--tituloSugerenciasTendenciasResultado_Background: #fffafe;
+	--tituloSugerenciasTendenciasResultado_Border: 1px solid #e6bbe2;
+	--tituloSugerenciasTendenciasResultado_BoxShadow: inset -2px -2px 0 0 #e6dce4, inset 2px 2px 0 0 #80687d;
+	--tituloSugerenciasTendenciasResultado_Text: #110038;
+
+	--boxDeGifs_Background: #e6e6e6;
+	--boxDeGifs_BoxShadow: inset -2px -2px 0 0 #b4b4b4, inset 2px 2px 0 0 #ffffff;
+	--boxDeGifs_Border_Hover: 1px dotted #110038;
+
+	--topBarGif_Background: linear-gradient(270deg, #f7c9f3 0%, #4180f6 100%);	 //! SIN USO
+	--topBarGif_Text: #ffffff;  //! SIN USO
+
+	--btnVerMas_Background: #4180f6;
+	--btnVerMas_Background_Hover: #3a72db;
+	--btnVerMas_Border: 1px solid #4c2f99;
+	--btnVerMas_Border_Hover: 1px dotted #4c2f99;
+	--btnVerMas_BoxShadow: inset -2px -2px 0 0 #284f99, inset 2px 2px 0 0 #ffffff;
+	--btnVerMas_Text: #ffffff;
+
+	--boxGifTendencias_Border_Hover: 1px dotted #110038;
+}

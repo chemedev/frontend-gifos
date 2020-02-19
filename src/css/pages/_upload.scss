@@ -1,0 +1,58 @@
+// -----------------------------------------------------------------------------
+// This file contains styles that are specific to the upload page.
+// -----------------------------------------------------------------------------
+
+.section-upload {
+	margin: 0 auto;
+	position: relative;
+	background: var(--boxDeBusqueda_Background);
+	box-shadow: var(--boxDeBusqueda_BoxShadow);
+	margin-top: 75px;
+	margin-bottom: 64px;
+	padding: 3px 3px 0;
+	h2.topBar {
+		height: 24px;
+		line-height: 24px;
+	}
+	width: 860px;
+	height: 548px;
+}
+
+.container-upload {
+	padding: 0;
+}
+
+.container-video {
+	padding: 0;
+	width: 832px;
+	height: 434px;
+	background: --cuadroTextBusqueda_Background;
+	border: --cuadroTextBusqueda_Border;
+	box-shadow: --cuadroTextBusqueda_BoxShadow;
+	margin: 8px 14px 0 8px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.gifoSubido {
+	display: none;
+}
+
+.timer {
+	width: 124px;
+	height: 36px;
+	margin-left: 11px;
+	margin-right: 24px;
+	text-align: center;
+	background: #ffffff;
+	border: 1px solid #979797;
+	box-shadow: inset -2px -2px 0 0 #e6e6e6, inset 2px 2px 0 0 #000000;
+	font-family: 'Chakra Petch', sans-serif;
+	font-weight: 400;
+	font-size: 16px;
+	color: #110038;
+	letter-spacing: 0;
+	line-height: 36px;
+	visibility: hidden;
+}

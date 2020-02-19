@@ -1,0 +1,215 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the button component.
+// -----------------------------------------------------------------------------
+
+.btn {
+	cursor: pointer;
+	height: 36px;
+	width: 8.25em;
+	border: var(--btn_CrearGifos_ElegirTema_Border);
+	background-color: var(--btn_CrearGifos_ElegirTema_Background);
+	box-shadow: var(--btn_CrearGifos_ElegirTema_BoxShadow);
+	color: var(--btn_CrearGifos_ElegirTema_Text);
+	&:hover {
+		outline: var(--btn-line-hover);
+		outline-offset: -4px;
+		background-color: $btn-light-hover;
+	}
+}
+
+.btnClose {
+	cursor: pointer;
+}
+
+.btnblack {
+	color: var(--btn_CrearGifos_ElegirTema_Text);
+}
+
+.btnTriangle {
+	width: 36px;
+	background-image: url(/img/dropdown.svg);
+	background-size: 10px 6px;
+	background-repeat: no-repeat;
+	background-position: center;
+	cursor: pointer;
+}
+
+.btnMisGifos {
+	width: 95px;
+	height: 32px;
+	line-height: 32px;
+	color: var(--btnMisGifos_Text);
+	&::first-letter {
+		text-decoration: underline;
+	}
+	&:hover {
+		outline: var(--btnMisGifos_Border_Hover);
+	}
+	&:active {
+		color: var(--btn-buscar-fc);
+		outline: none;
+	}
+}
+
+.btn-buscar {
+	display: flex;
+	align-items: center;
+	width: 102px;
+	height: 36px;
+	cursor: pointer;
+	color: var(--btnBuscar_Text);
+	background-color: var(--btnBuscar_Background);
+	border: var(--btnBuscar_Border);
+	box-shadow: var(--btnBuscar_BoxShadow);
+	#lupa {
+		display: inline-block;
+		height: 16px;
+		width: 16px;
+		margin: 10px;
+		background-image: url(/img/lupa_inactive.svg);
+		background-size: 16px 16px;
+		background-repeat: no-repeat;
+		background-position: center;
+	}
+	&:active {
+		outline: var(--btnBuscar_Border_Active);
+		outline-offset: -4px;
+		background: var(--btnBuscar_Background_Active);
+		box-shadow: var(--btnBuscar_BoxShadow_FocusActive);
+		color: var(--btnBuscar_Text_FocusActive);
+		& #lupa {
+			background-image: url(/img/lupa.svg);
+		}
+	}
+	&:focus {
+		outline: 0;
+		background: var(--btnBuscar_Background_Focus);
+		box-shadow: var(--btnBuscar_BoxShadow_FocusActive);
+		color: --btnBuscar_Text_FocusActive;
+	}
+	&.input {
+		background: var(--btnBuscar_Background_Focus);
+		border: var(--btnBuscar_Border_Focus);
+		box-shadow: var(--btnBuscar_BoxShadow_FocusActive);
+		color: var(--btnBuscar_Text_FocusActive);
+	}
+}
+
+.btn-sugerencia {
+	cursor: pointer;
+	background-color: var(--btnSugerido_Background);
+	border: var(--btnSugerido_Border);
+	box-shadow: var(--btnSugerido_BoxShadow);
+	width: 1057px;
+	height: 36px;
+	font-family: 'Chakra Petch', sans-serif;
+	font-weight: 400;
+	font-size: 16px;
+	color: var(--btnSugerido_Text);
+	letter-spacing: 0;
+	line-height: 36px;
+	text-indent: 16px;
+	display: none;
+	&:hover {
+		background: var(--btnSugerido_Background_Active);
+		outline: var(--btnSugerido_Border_Focus);
+		outline-offset: -4px;
+	}
+}
+
+.grid-btn {
+	cursor: pointer;
+	color: var(--btnVerMas_Text);
+	position: absolute;
+	bottom: 15px;
+	left: 7px;
+	width: 81px;
+	height: 34px;
+	background: var(--btnVerMas_Background);
+	border: var(--btnVerMas_Border);
+	box-shadow: var(--btnVerMas_BoxShadow);
+	&:hover {
+		background: var(--btnVerMas_Background_Hover);
+		border: var(--btnVerMas_Border_Hover);
+	}
+}
+
+.btnCapturar {
+	padding: 21px 16px 0 0;
+	position: relative;
+	display: flex;
+	align-items: center;
+	div {
+		display: flex;
+	}
+}
+
+.btnCloseUpload {
+	position: absolute;
+	right: 13px;
+	top: 8px;
+}
+
+.btnCamera {
+	width: 36px;
+	background-image: url(/img/camera_dark.svg);
+	background-size: 18px 16.5px;
+	background-repeat: no-repeat;
+	background-position: center;
+	cursor: pointer;
+}
+
+.btnReady {
+	background-color: #ff6161;
+	&:hover {
+		background-color: #ff6161;
+	}
+}
+
+.btnRecord {
+	background-color: #ff6161;
+	background-image: url(/img/recording_dark.svg);
+	&:hover {
+		background-color: #ff6161;
+	}
+}
+
+.btnRepeat {
+	margin-right: 14px;
+	background-color: --body_Background;
+	border: btnSailorDay_Text;
+	box-shadow: --btnBuscar_BoxShadow_FocusActive;
+	visibility: hidden;
+}
+
+.btnPlay {
+	width: 24px;
+	height: 24px;
+	margin-right: 4px;
+	background-image: url(/img/forward.svg);
+	background-size: 18px 16.5px;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-color: #f7c9f3;
+	border: 1px solid #110038;
+	box-shadow: inset -1px -1px 0 0 #997d97, inset 1px 1px 0 0 #ffffff;
+	cursor: pointer;
+	visibility: hidden;
+}
+
+.btnUploaded {
+	cursor: pointer;
+	width: 256px;
+	height: 36px;
+	background: #fff4fd;
+	border: 1px solid #110038;
+	box-shadow: --btn_CrearGifos_ElegirTema_BoxShadow;
+	margin-top: 16px;
+	text-align: center;
+	line-height: 36px;
+}
+
+.btnListo {
+	margin-top: 111px;
+	margin-left: 124px;
+}
