@@ -3,12 +3,12 @@
 // -----------------------------------------------------------------------------
 
 html {
-  box-sizing: border-box;
+	box-sizing: border-box;
 }
 *,
 *::before,
 *::after {
-  box-sizing: inherit;
+	box-sizing: inherit;
 }
 
 body {
@@ -85,6 +85,8 @@ h2.topBar {
 
 video {
 	height: 99%;
+	width: 100%;
+	object-fit: cover;
 }
 
 progress {
@@ -98,4 +100,5 @@ progress {
 
 iframe {
 	height: 100%;
+	width: 284px;
 }

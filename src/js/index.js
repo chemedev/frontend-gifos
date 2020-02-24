@@ -9,7 +9,8 @@ const popupDesplegable = document.querySelector('#popupDesplegable');
 const menuDesplegable = document.querySelector('#menuDesplegable');
 
 let spaceIndex = 0,
-	cont = 0;
+	cont = 0,
+	script = '';
 
 document.getElementById('btnElegirTema').addEventListener('click', menuDesplegableOnClick);
 document.getElementById('opcionLight').addEventListener('click', lightTheme);
@@ -32,6 +33,22 @@ sug3.addEventListener('mousedown', () => busqueda(`'${sug3.innerHTML}'`), true);
 
 txtSearch.addEventListener('click', () => (txtSearch.value = ''));
 
+function autocomplete() {
+	if (script !== '') {
+		document.body.removeChild(script);
+	}
+	script = document.createElement('script');
+	let valor = txtSearch.value;
+	script.src = `https://suggestqueries.google.com/complete/search?output=firefox&callback=autocompleteCallback&q=${valor}`;
+	document.body.appendChild(script);
+}
+
+function autocompleteCallback(data) {
+	sug1.innerHTML = data[1][0];
+	sug2.innerHTML = data[1][1];
+	sug3.innerHTML = data[1][2];
+}
+
 document.getElementById('busqueda').addEventListener('click', () => {
 	if (txtSearch.value.length != 0) busqueda(txtSearch.value);
 });
@@ -39,10 +56,9 @@ document.getElementById('busqueda').addEventListener('click', () => {
 txtSearch.addEventListener('blur', () => inputBuscarOnBlur());
 
 txtSearch.addEventListener('keyup', e => {
-	if (e.keyCode == 32) {
-		inputBuscarOnKeyUp();
-		inputBuscarOnClick();
-	}
+	inputBuscarOnKeyUp();
+	inputBuscarOnClick();
+	autocomplete();
 	if (e.key == 'Enter') {
 		busqueda(txtSearch.value);
 		popupDesplegable.classList.remove('active');
@@ -88,27 +104,9 @@ function tendencias() {
 
 //! Carga palabras tipeadas en btns bajo cuadro de búsqueda
 function inputBuscarOnKeyUp() {
-	let valueBuscar = document.getElementById('buscar_rec').value;
-	let anySpace = valueBuscar.includes(' ', spaceIndex);
-	if (spaceIndex != 0 && cont == 2) {
-		sug3.style.display = 'block';
-		sug3.innerHTML = valueBuscar;
-		return;
-	}
-	if (spaceIndex != 0 && cont == 1) {
-		sug2.style.display = 'block';
-		let stringSplit = valueBuscar.split(' ');
-		sug2.innerHTML = stringSplit[0] + ' ' + stringSplit[1];
-		spaceIndex = valueBuscar.length;
-		cont++;
-		return;
-	}
-	if (anySpace && spaceIndex == 0) {
-		sug1.innerHTML = valueBuscar;
-		sug1.style.display = 'block';
-		spaceIndex = valueBuscar.length;
-		cont++;
-	}
+	sug3.style.display = 'block';
+	sug2.style.display = 'block';
+	sug1.style.display = 'block';
 }
 
 function newGridBoxSugerencias(gif) {
@@ -117,14 +115,14 @@ function newGridBoxSugerencias(gif) {
 	gifTitle.pop();
 	const gifTitleBusqueda = gifTitle.join(' ');
 	gifTitle = gifTitle.join('');
-	newGridBox.className = 'grid-box';
+	newGridBox.className = 'grid-box box-sugerencias';
 	newGridBox.id = gif.id;
 	newGridBox.innerHTML = `
 					<div class="topBar">
 						<h2 class="topBar-text">#${gifTitle}</h2>
 						<img src="../../img/close.svg" class="btnClose" onclick="removeGif('${newGridBox.id}')" />
 					</div>
-					<div class="grid-gif">
+					<div>
 						<img class="gifSugerencia" src="${gif.images.downsized.url}" />
 					</div>
 					<button class="grid-btn" type="button" onclick="busqueda('${gifTitleBusqueda}')">Ver más</button>
@@ -140,8 +138,9 @@ function newGridBoxTendencias(gif) {
 	`;
 	document.getElementById('gridTendencias').appendChild(newGridBox);
 }
-
 function busqueda(search) {
+	let arry = [],
+		wideItems = [];
 	clearGifs();
 	localStorage.setItem('lastSearch', search);
 	const btnsBuscar = document.getElementById('buscar-ejemplos');
@@ -152,7 +151,24 @@ function busqueda(search) {
 	txtSearch.value = '';
 	const found = fetch(`${api}search?api_key=${apiKey}&limit=12&q=${search}`)
 		.then(response => response.json())
-		.then(parsedResponse => parsedResponse.data.map(gif => newGridBoxBusqueda(gif)))
+		.then(parsedResponse => {
+			parsedResponse.data.map(gif => {
+				arry.push(gif);
+			});
+			newGridBoxBusqueda(arry);
+			getWideItems(arry, wideItems);
+			wideItems.forEach((e, i) => {
+				if (i < 2) {
+					document.getElementById('myGrid').insertBefore(e, arry[2]);
+				} else if (i < 4) {
+					document.getElementById('myGrid').insertBefore(e, arry[6]);
+				} else if (i < 7) {
+					document.getElementById('myGrid').insertBefore(e, arry[10]);
+				} else {
+					document.getElementById('myGrid').appendChild(e);
+				}
+			});
+		})
 		.catch(error => console.log(error));
 	btnsBuscar.style.display = 'block';
 	sectionResultados.style.display = 'block';
@@ -167,18 +183,43 @@ function removeGif(gif) {
 	document.getElementById(gif).remove();
 }
 
-function newGridBoxBusqueda(gif) {
-	let newGridBox = document.createElement('div');
-	newGridBox.className = 'grid-box';
-	newGridBox.innerHTML = `
-		<img class='gif' src='${gif.images.downsized.url}' />
+function newGridBoxBusqueda(arry) {
+	arry.forEach((e, i) => {
+		let newGridBox = document.createElement('div');
+		if (e.images.downsized.width / e.images.downsized.height >= 1.75) newGridBox.className = 'grid-boxWide';
+		else newGridBox.className = 'grid-box';
+		newGridBox.innerHTML = `
+		<img class='gif' src='${e.images.downsized.url}' />
 	`;
-	document.getElementById('myGrid').appendChild(newGridBox);
+		arry.splice(i, 1, newGridBox);
+	});
+}
+
+function getWideItems(list, buffer) {
+	for (let i = 0; i < 5; i++) {
+		list.forEach((e, i) => {
+			if (e.className == 'grid-boxWide') {
+				buffer.push(e);
+				list.splice(i, 1);
+			}
+		});
+	}
+	list.forEach(e => document.getElementById('myGrid').appendChild(e));
 }
 
 function menuDesplegableOnClick() {
 	menuDesplegable.classList.toggle('active');
 }
+
+function getAspectRatio(width, height) {
+	// console.log(width, height);
+	if (width / height >= 1.75) return 'wide';
+	else return 'square';
+}
+
+// function getAspectRatio(width, height) {
+// 	return width / height >= 1.75;
+// }
 
 function inputBuscarOnClick() {
 	const dataset = document.documentElement.dataset.theme == 'light'; //!OPTIMIZAR

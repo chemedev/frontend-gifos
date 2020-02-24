@@ -9,8 +9,6 @@
 	padding: 3px 3px 0;
 }
 
-
-
 .container {
 	height: 75px;
 	display: flex;
@@ -123,8 +121,12 @@
 
 .grid {
 	display: grid;
-	grid-template-columns: repeat(4, 1fr);
+	grid-template-columns: repeat(auto-fill, minmax(288px, 1fr));
 	gap: 1rem;
+}
+
+.box-sugerencias {
+	box-shadow: var(--boxDeGifs_BoxShadow);
 }
 
 .grid-box {
@@ -132,6 +134,31 @@
 	width: 288px;
 	height: 313px;
 	padding: 3px 4px 4px;
+
+	.topBar {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		width: 280px;
+		height: 24px;
+		padding: 0 4px 0 3px;
+	}
+	.topBar-text {
+		font-weight: 700;
+		font-size: 14px;
+	}
+	&:hover {
+		background: var(--boxDeGifs_Background);
+		box-shadow: var(--boxDeGifs_BoxShadow);
+	}
+}
+
+.grid-boxWide {
+	grid-column: span 2;
+	position: relative;
+	// width: 288px;
+	height: 313px;
+	// padding: 3px 4px 4px;
 
 	.topBar {
 		display: flex;
