@@ -5,8 +5,10 @@ const btnCamera = document.querySelector('#btnCamera');
 const btnRecord = document.querySelector('#btnRecord');
 const btnRepeat = document.querySelector('#btnRepeat');
 const btnPlay = document.querySelector('#btnPlay');
-const progressPlay = document.querySelector('#progressPlay');
-const progressFile = document.querySelector('#progressFile');
+const progressBar1cont = document.querySelector('#bar1');
+const progressBar2cont = document.querySelector('#bar2');
+const progressBar1 = document.querySelectorAll('#bar1 .progressBarPart');
+const progressBar2 = document.querySelectorAll('#bar2 .progressBarPart');
 const title = document.querySelector('#title');
 const gif = document.querySelector('#gif');
 const lblTimer = document.querySelector('#timer');
@@ -33,10 +35,7 @@ function dynamicFunctionality() {
 			flag = 'stop';
 			recordVideo();
 			lblTimer.classList.toggle('visible');
-			setInterval(() => {
-				let time = luxon.DateTime.fromSeconds(video.currentTime).toFormat('00:mm:ss:S');
-				lblTimer.innerHTML = time;
-			}, 500);
+			timer();
 			btnRecord.innerHTML = 'Listo';
 			btnRecord.classList.toggle('btnReady');
 			btnCamera.classList.toggle('btnRecord');
@@ -52,19 +51,21 @@ function dynamicFunctionality() {
 			title.innerHTML = 'Vista Previa';
 			btnRecord.innerHTML = 'Subir Gifo';
 			btnRepeat.classList.toggle('visible');
-			progressPlay.classList.toggle('visible');
+			progressBar2cont.classList.toggle('visible');
 			btnPlay.classList.toggle('visible');
+			progressBarEffect(progressBar2);
 			break;
 		case 'preview':
 			flag = 'upload';
 			upload(blob);
 			document.querySelector('.container-video').style.display = 'none';
 			document.querySelector('.container-uploading').style.display = 'flex';
+			progressBarEffect(progressBar1);
 			title.innerHTML = 'Subiendo Gifo';
 			btnRecord.innerHTML = 'Cancelar';
 			btnRepeat.classList.toggle('visible');
-			progressPlay.classList.toggle('visible');
-			progressFile.classList.toggle('visible');
+			progressBar1cont.classList.toggle('visible');
+			progressBar2cont.classList.toggle('visible');
 			btnPlay.classList.toggle('visible');
 			lblTimer.classList.toggle('visible');
 			break;
@@ -133,6 +134,39 @@ function createGifRecorder(stream) {
 		hidden: 240,
 		onGifRecordingStarted: () => console.log('started')
 	});
+}
+
+function progressBarEffect(bar) {
+	let cont = 0;
+	setInterval(() => {
+		if (cont < bar.length) {
+			bar[cont].classList.toggle('progressBarPartEnabled');
+			cont++;
+		} else {
+			cont = 0;
+		}
+	}, 100);
+}
+
+function timer() {
+	let seconds = 1;
+	let minutes = 0;
+	let timer = setInterval(() => {
+		if (flag == 'stop') {
+			if (seconds < 60) {
+				if (seconds <= 9) {
+					seconds = '0' + seconds;
+				}
+				document.getElementById('timer').innerHTML = `00:00:0${minutes}:${seconds}`;
+				seconds++;
+			} else {
+				minutes++;
+				seconds = 0;
+			}
+		} else {
+			clearInterval(timer);
+		}
+	}, 1000);
 }
 
 async function upload(blob) {
