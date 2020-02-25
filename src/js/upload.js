@@ -149,19 +149,20 @@ function progressBarEffect(bar) {
 }
 
 function timer() {
-	let seconds = 1;
-	let minutes = 0;
+	let segs = 1;
+	let mins = 0;
+	let timerElement = document.querySelector('#timer');
 	let timer = setInterval(() => {
 		if (flag == 'stop') {
-			if (seconds < 60) {
-				if (seconds <= 9) {
-					seconds = '0' + seconds;
+			if (segs < 60) {
+				if (segs <= 9) {
+					segs = '0' + segs;
 				}
-				document.getElementById('timer').innerHTML = `00:00:0${minutes}:${seconds}`;
-				seconds++;
+				timerElement.innerHTML = `00:00:0${mins}:${segs}`;
+				segs++;
 			} else {
-				minutes++;
-				seconds = 0;
+				mins++;
+				segs = 0;
 			}
 		} else {
 			clearInterval(timer);
