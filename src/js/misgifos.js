@@ -50,10 +50,10 @@ function persistenceTheme() {
 		document.documentElement.dataset.theme = localStorage.getItem('theme');
 		if (localStorage.getItem('theme') == 'light') {
 			const logo = document.getElementById('logo');
-			logo.setAttribute('src', '../../img/gifOF_logo.png');
+			logo.setAttribute('src', '../img/gifOF_logo.png');
 		} else {
 			const logo = document.getElementById('logo');
-			logo.setAttribute('src', '../../img/gifOF_logo_dark.png');
+			logo.setAttribute('src', '../img/gifOF_logo_dark.png');
 		}
 	}
 }
@@ -67,7 +67,7 @@ function newGridBoxSugerencias(gif) {
 	newGridBox.innerHTML = `
 					<div class="topBar">
 						<h2 class="topBar-text">#${gifTitle}</h2>
-						<img src="../../img/close.svg" />
+						<img src="../img/close.svg" />
 					</div>
 					<div class="grid-gif">
 						<img class="gifSugerencia" src="${gif.images.downsized.url}" />

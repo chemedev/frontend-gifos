@@ -8,9 +8,9 @@ function lightTheme() {
 	localStorage.setItem('theme', 'light');
 
 	const logo = document.getElementById('logo');
-	logo.setAttribute('src', '../../img/gifOF_logo.png');
+	logo.setAttribute('src', '../img/gifOF_logo.png');
 	const lupa = document.getElementById('lupa');
-	lupa.style.backgroundImage = 'url(../../img/lupa_inactive.svg)';
+	lupa.style.backgroundImage = 'url(../img/lupa_inactive.svg)';
 
 	menuDesplegableOnClick();
 }
@@ -20,9 +20,9 @@ function darkTheme() {
 	localStorage.setItem('theme', 'dark');
 
 	const logo = document.getElementById('logo');
-	logo.setAttribute('src', '../../img/gifOF_logo_dark.png');
+	logo.setAttribute('src', '../img/gifOF_logo_dark.png');
 	const lupa = document.getElementById('lupa');
-	lupa.style.backgroundImage = 'url(../../img/combined_shape.svg)';
+	lupa.style.backgroundImage = 'url(../img/combined_shape.svg)';
 
 	menuDesplegableOnClick();
 }

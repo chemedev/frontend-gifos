@@ -72,14 +72,14 @@ function persistenceTheme() {
 		document.documentElement.dataset.theme = localStorage.getItem('theme');
 		if (localStorage.getItem('theme') == 'light') {
 			const logo = document.getElementById('logo');
-			logo.setAttribute('src', '../../img/gifOF_logo.png');
+			logo.setAttribute('src', '../img/gifOF_logo.png');
 			const lupa = document.getElementById('lupa');
-			lupa.style.backgroundImage = 'url(../../img/lupa_inactive.svg)';
+			lupa.style.backgroundImage = 'url(../img/lupa_inactive.svg)';
 		} else {
 			const logo = document.getElementById('logo');
-			logo.setAttribute('src', '../../img/gifOF_logo_dark.png');
+			logo.setAttribute('src', '../img/gifOF_logo_dark.png');
 			const lupa = document.getElementById('lupa');
-			lupa.style.backgroundImage = 'url(../../img/combined_shape.svg)';
+			lupa.style.backgroundImage = 'url(../img/combined_shape.svg)';
 		}
 	}
 }
@@ -122,7 +122,7 @@ function newGridBoxSugerencias(gif) {
 	newGridBox.innerHTML = `
 					<div class="topBar">
 						<h2 class="topBar-text">#${gifTitle}</h2>
-						<img src="../../img/close.svg" class="btnClose" onclick="removeGif('${newGridBox.id}')" />
+						<img src="../img/close.svg" class="btnClose" onclick="removeGif('${newGridBox.id}')" />
 					</div>
 					<div>
 						<img class="gifSugerencia" src="${gif.images.downsized.url}" />
@@ -239,9 +239,9 @@ function inputBuscarOnClick() {
 		popupDesplegable.classList.add('active');
 	}
 	const lupa = document.getElementById('lupa');
-	lupa.style.backgroundImage = 'url(../../img/lupa.svg)';
-	if (dataset) lupa.style.backgroundImage = 'url(../../img/lupa.svg)';
-	else lupa.style.backgroundImage = 'url(../../img/lupa_dark.svg)';
+	lupa.style.backgroundImage = 'url(../img/lupa.svg)';
+	if (dataset) lupa.style.backgroundImage = 'url(../img/lupa.svg)';
+	else lupa.style.backgroundImage = 'url(../img/lupa_dark.svg)';
 	const btnBuscar = document.querySelector('.btn-buscar');
 	btnBuscar.classList.add('input');
 }
@@ -250,8 +250,8 @@ function inputBuscarOnBlur() {
 	const dataset = document.documentElement.dataset.theme == 'light'; //!OPTIMIZAR
 	popupDesplegable.classList.remove('active');
 	const lupa = document.getElementById('lupa');
-	if (dataset == true) lupa.style.backgroundImage = 'url(../../img/lupa_inactive.svg)';
-	else lupa.style.backgroundImage = 'url(../../img/combined_shape.svg)';
+	if (dataset == true) lupa.style.backgroundImage = 'url(../img/lupa_inactive.svg)';
+	else lupa.style.backgroundImage = 'url(../img/combined_shape.svg)';
 	const btnBuscar = document.querySelector('.btn-buscar');
 	btnBuscar.classList.remove('input');
 	sug1.style.display = 'none';

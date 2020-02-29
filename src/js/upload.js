@@ -77,10 +77,10 @@ function persistenceTheme() {
 		document.documentElement.dataset.theme = localStorage.getItem('theme');
 		if (localStorage.getItem('theme') == 'light') {
 			const logo = document.getElementById('logo');
-			logo.setAttribute('src', '../../img/gifOF_logo.png');
+			logo.setAttribute('src', '../img/gifOF_logo.png');
 		} else {
 			const logo = document.getElementById('logo');
-			logo.setAttribute('src', '../../img/gifOF_logo_dark.png');
+			logo.setAttribute('src', '../img/gifOF_logo_dark.png');
 		}
 	}
 }
