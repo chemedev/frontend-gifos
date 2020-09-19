@@ -1,9 +1,9 @@
 'use strict';
 
-document.getElementById('arrow').addEventListener('click', () => (document.location.href = '../../src/html/index.html'));
-document.getElementById('logo').addEventListener('click', () => (document.location.href = '../../src/html/index.html'));
-document.getElementById('btnCancelar').addEventListener('click', () => (document.location.href = '../../src/html/index.html'));
-document.getElementById('btnComenzar').addEventListener('click', () => (document.location.href = '../../src/html/upload.html'));
+document.getElementById('arrow').addEventListener('click', () => (document.location.href = './index.html'));
+document.getElementById('logo').addEventListener('click', () => (document.location.href = './index.html'));
+document.getElementById('btnCancelar').addEventListener('click', () => (document.location.href = './index.html'));
+document.getElementById('btnComenzar').addEventListener('click', () => (document.location.href = './html/upload.html'));
 document.getElementById('btnReady').addEventListener('click', () => document.location.reload());
 const btnCopyLink = document.getElementById('btnCopyLink');
 
@@ -50,10 +50,10 @@ function persistenceTheme() {
 		document.documentElement.dataset.theme = localStorage.getItem('theme');
 		if (localStorage.getItem('theme') == 'light') {
 			const logo = document.getElementById('logo');
-			logo.setAttribute('src', '../img/gifOF_logo.png');
+			logo.setAttribute('src', './img/gifOF_logo.png');
 		} else {
 			const logo = document.getElementById('logo');
-			logo.setAttribute('src', '../img/gifOF_logo_dark.png');
+			logo.setAttribute('src', './img/gifOF_logo_dark.png');
 		}
 	}
 }
@@ -67,7 +67,7 @@ function newGridBoxSugerencias(gif) {
 	newGridBox.innerHTML = `
 					<div class="topBar">
 						<h2 class="topBar-text">#${gifTitle}</h2>
-						<img src="../img/close.svg" />
+						<img src="./img/close.svg" />
 					</div>
 					<div class="grid-gif">
 						<img class="gifSugerencia" src="${gif.images.downsized.url}" />

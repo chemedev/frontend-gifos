@@ -20,8 +20,8 @@ let cameraStream,
 	blob,
 	flag = 'record';
 
-document.getElementById('arrow').addEventListener('click', () => (document.location.href = '../../src/html/misgifos.html'));
-document.getElementById('logo').addEventListener('click', () => (document.location.href = '../../src/html/index.html'));
+document.getElementById('arrow').addEventListener('click', () => (document.location.href = './misgifos.html'));
+document.getElementById('logo').addEventListener('click', () => (document.location.href = './index.html'));
 btnRecord.addEventListener('click', () => dynamicFunctionality());
 btnRepeat.addEventListener('click', () => {
 	location.reload();
@@ -80,7 +80,7 @@ function persistenceTheme() {
 			logo.setAttribute('src', '../img/gifOF_logo.png');
 		} else {
 			const logo = document.getElementById('logo');
-			logo.setAttribute('src', '../img/gifOF_logo_dark.png');
+			logo.setAttribute('src', './gifOF_logo_dark.png');
 		}
 	}
 }
@@ -185,7 +185,7 @@ async function upload(blob) {
 		});
 	localStorage.setItem('newGifos', false);
 	localStorage.setItem('hasUploaded', true);
-	document.location.href = '../../src/html/misgifos.html';
+	document.location.href = './misgifos.html';
 }
 
 //! Guarda IDs separados por , en un solo key
